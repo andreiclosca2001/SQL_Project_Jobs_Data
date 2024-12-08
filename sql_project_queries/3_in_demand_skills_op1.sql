@@ -35,3 +35,5 @@ INNER JOIN
     skills_dim AS sd ON sd.skill_id = rjs.skill_id
 ORDER BY 
     rjs.demand_count DESC;
+
+-- to do  breakdown of the results

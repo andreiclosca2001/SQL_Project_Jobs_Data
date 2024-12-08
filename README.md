@@ -1,1 +1,1 @@
-TO DO: Update and explain the stepts within the project both ENG and RO.
+TO DO: Update and explain the steps within the project in both ENG and RO.
