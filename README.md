@@ -137,7 +137,7 @@ Top Skills Across Roles:
 - Marketing Analysts (e.g., Pinterest) focus on data visualization tools (e.g., Tableau) and big data platforms (e.g., Hadoop).
 - Technical Analysts (e.g., AT&T, Motional) require cloud computing and programming proficiency (e.g., Python, R, PySpark).
 
-### 3. Most in-demand skills
+## 3. Most in-demand skills
 
 This query aims to find the most demanded skills for a Data Analyst role, offering the number of job postings per skill.
 
@@ -163,6 +163,8 @@ ORDER BY COUNT(jpf.job_id) DESC;
 ### Table Results
 -- to do
 
+![Most Demanded Skills](assets/query3.png/)
+
 ### Key Observations
 #### Top Skills by Job Postings:
 
@@ -170,4 +172,99 @@ ORDER BY COUNT(jpf.job_id) DESC;
 - **Excel, Python, and Tableau** follow, demonstrating the importance of programming, data visualization, and spreadsheet skills.
 - Advanced tools like **Power BI, R, and SAS** are also frequently requested, indicating demand for analytics and statistical expertise.
 
+## 4. Top-paying Skills
 
+In this query I aim to find the highest paid skills for a Data Analyst role, judging by the average salary per year in 2023.
+
+```sql
+SELECT
+    sd.skills,
+    ROUND(AVG(jpf.salary_year_avg), 0) AS salary_avg
+FROM 
+    job_postings_fact AS jpf
+INNER JOIN 
+    skills_job_dim AS sjd ON sjd.job_id = jpf.job_id
+INNER JOIN
+    skills_dim AS sd ON sd.skill_id = sjd.skill_id
+WHERE 
+    jpf.job_title_short = 'Data Analyst'
+AND
+    jpf.salary_year_avg IS NOT NULL
+GROUP BY 
+    sd.skills
+ORDER BY 
+    salary_avg DESC;
+```
+### Table Results
+--to do
+
+### Key insights
+--to do
+
+## 5. Optimal Skills to Learn
+
+This query aims to find the skills and job posting information for the most demanded and highest paid Data Analyst positions.
+
+```sql
+-- The first CTE uses the query run previously for skills in demand.
+
+WITH 
+    skills_demand AS (
+        SELECT
+            sd.skill_id,
+            sd.skills,
+            COUNT(sjd.job_id) AS demand_count
+        FROM 
+            job_postings_fact AS jpf
+        INNER JOIN
+            skills_job_dim AS sjd ON sjd.job_id = jpf.job_id
+        INNER JOIN
+            skills_dim AS sd ON sd.skill_id = sjd.skill_id
+        WHERE
+            jpf.job_work_from_home = TRUE
+        AND
+            jpf.job_title_short = 'Data Analyst'
+        AND
+            jpf.salary_year_avg IS NOT NULL
+        GROUP BY 
+            sd.skill_id
+),
+
+-- The second CTE uses the query for the top paying skills
+
+    average_salary AS (
+        SELECT
+            sjd.skill_id,
+            ROUND(AVG(jpf.salary_year_avg), 0) AS salary_avg
+        FROM 
+            job_postings_fact AS jpf
+        INNER JOIN 
+            skills_job_dim AS sjd ON sjd.job_id = jpf.job_id
+        INNER JOIN
+            skills_dim AS sd ON sd.skill_id = sjd.skill_id
+        WHERE 
+            jpf.job_title_short = 'Data Analyst'
+        AND
+            jpf.salary_year_avg IS NOT NULL
+        GROUP BY 
+            sjd.skill_id
+)
+
+SELECT 
+    skills_demand.skill_id AS "Skill ID",
+    skills_demand.skills AS "Skill Name",
+    skills_demand.demand_count AS "Job Offers per Skill",
+    average_salary.salary_avg AS "Average Salary per Skill"
+FROM
+    skills_demand
+INNER JOIN
+    average_salary ON average_salary.skill_id = skills_demand.skill_id
+ORDER BY
+    skills_demand.demand_count DESC,
+    average_salary.salary_avg DESC;
+```
+### Table Results
+--to do
+
+### Key insights 
+--to do
