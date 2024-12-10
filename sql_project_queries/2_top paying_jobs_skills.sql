@@ -43,4 +43,3 @@ INNER JOIN
 ORDER BY 
     tpj.salary_year_avg DESC;
 
--- to do  breakdown of the results

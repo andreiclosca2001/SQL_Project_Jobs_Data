@@ -29,4 +29,3 @@ ORDER BY
     jpf.salary_year_avg DESC
 LIMIT 10;
 
--- to do  breakdown of the results

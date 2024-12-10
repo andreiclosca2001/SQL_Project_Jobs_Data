@@ -28,4 +28,4 @@ GROUP BY
 ORDER BY 
     salary_avg DESC;
 
--- to do  breakdown of the results
+

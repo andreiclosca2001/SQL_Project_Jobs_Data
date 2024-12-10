@@ -36,4 +36,3 @@ INNER JOIN
 ORDER BY 
     rjs.demand_count DESC;
 
--- to do  breakdown of the results
