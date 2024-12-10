@@ -61,17 +61,16 @@ LIMIT 10;
 --to do
 
 ### Key Insights
-Top-Paying Jobs:
 
-**The highest salary** is offered by Mantys for the "Data Analyst" role, with an annual salary of $650,000.
+- Top-Paying Jobs:
+The highest salary is offered by Mantys for the "Data Analyst" role, with an annual salary of $650,000.
 This is significantly higher than the second-highest salary of $336,500 offered by Meta for the "Director of Analytics" role.
-Job Titles and Salaries:
 
-**The dataset includes** a mix of job levels ranging from standard "Data Analyst" roles to more senior titles like "Director of Analytics" and "Principal Data Analyst".
+- Job Titles and Salaries:
+The dataset includes a mix of job levels ranging from standard "Data Analyst" roles to more senior titles like "Director of Analytics" and "Principal Data Analyst".
 Senior roles (e.g., Director, Principal) generally cluster around the $200,000-$336,500 range, while standard analyst roles vary widely, from $184,000 to $650,000.
-Companies:
 
-**Companies like** Meta, AT&T, and Pinterest offer competitive salaries for data-related roles, primarily in senior positions.
+- Companies like Meta, AT&T, and Pinterest offer competitive salaries for data-related roles, primarily in senior positions.
 Notably, Mantys offers an exceptionally high salary for a standard Data Analyst role, which could indicate a highly specialized or critical position.
 
 ![Top Paying Roles](assets/query1.png/)
