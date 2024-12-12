@@ -58,7 +58,7 @@ LIMIT 10;
 ```
 ### Table Results
 
---to do
+![Table 1](assets/sql_table_1.png/)
 
 ### Key Insights
 
@@ -116,7 +116,9 @@ ORDER BY
     tpj.salary_year_avg DESC;
 ```
 ### Table Results
--- to do
+
+![Table 2](assets/sql_table_2.png/)
+**Only the results shown on the first page.**
 
 ### Key Insights
 Top Skills Across Roles:
@@ -160,7 +162,9 @@ GROUP BY
 ORDER BY COUNT(jpf.job_id) DESC;
 ```
 ### Table Results
--- to do
+
+![Table 3](assets/sql_table_3.png/)
+**Only the results shown on the first page.**
 
 ![Most Demanded Skills](assets/query3.png/)
 
@@ -195,10 +199,24 @@ ORDER BY
     salary_avg DESC;
 ```
 ### Table Results
---to do
+
+![Table 4](assets/sql_table_4.png/)
+**Only the results shown on the first page.**
 
 ### Key insights
---to do
+
+#### Top-Paying Skills:
+
+- **Highest**: svn ($400,000), followed by Solidity ($179,000) and Couchbase ($160,515).
+Emerging Tech:
+
+- **Machine learning tools**: Hugging Face ($123,950), TensorFlow ($120,647), PyTorch ($125,226).
+
+- **Cloud & DevOps**: Terraform ($146,734), VMware ($147,500), GitLab ($134,126), AWS ($106,440).
+
+- **Programming Languages**: Scala ($115,480), Perl ($124,686), Golang ($155,000), Rust ($107,925).
+
+- **Data Tools**: Cassandra ($118,407), Snowflake ($111,578), Databricks ($112,881).
 
 ## 5. Optimal Skills to Learn
 
@@ -263,7 +281,35 @@ ORDER BY
     average_salary.salary_avg DESC;
 ```
 ### Table Results
---to do
+
+![Table 5](assets/sql_table_5.png/)
+**Only the results shown on the first page.**
 
 ### Key insights 
---to do
+- High-Demand Skills:
+SQL (398 offers) and Excel (256 offers) dominate in job demand, followed by Python (236 offers) and Tableau (230 offers).
+
+- Data visualization tools like Power BI (110 offers) and Tableau indicate strong demand in business intelligence.
+
+- Top Salaries: Couchbase ($160,515) and Datarobot ($155,486) are associated with the highest average salaries but have minimal job demand (1 offer each).
+GitLab ($134,126) and Twilio ($138,500) also offer lucrative salaries despite low demand.
+
+- Skills Balancing Demand and Salary:
+Snowflake ($111,578), AWS ($106,440), and Azure ($105,400) show a strong mix of demand and competitive salaries.
+
+- Programming languages like R ($98,708) and Python ($101,512) feature prominently.
+
+- Specialized Tools:
+Hadoop (22 offers, $110,888) and Spark (13 offers, $113,002) reflect a niche demand for big data technologies.
+
+- Lower Demand, Competitive Salary:
+Technologies like Scala ($115,480), Airflow ($116,387), and Git ($112,250) have fewer offers but provide attractive salaries.
+
+# What I learned
+
+Throughout this project, I've significantly enhanced my analytical and SQL skills:
+
+- **Complex Query Crafting**: Learning the art of advanced SQL, merging tables and using CTEs, Subqueries and Joins.
+- **Data Aggregation**: Using GROUP BY and aggregate functions such as COUNT() and AVG() and overall improving my SQL queries.
+- **Analytical Skills**: Leveled up my problem-solving skills, turning questions into insightful SQL queries.
+- **Other Technical Skills**: Gained valuable knowledge and experience in using Visual Studio Code as well as Git and GitHub.
